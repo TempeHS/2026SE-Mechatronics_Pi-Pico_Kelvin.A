@@ -12,6 +12,7 @@ from machine import RTC
 
 # create a PWM servo controller (16 - pin Pico)
 servo_pwm = PWM(Pin(16))
+servo_pwm2 = PWM(Pin(15))
 rtc = RTC()
 
 # Set the parameters of the servo pulses, more details in the "Documentation" section
@@ -23,6 +24,10 @@ dead_zone_us = 1500
 # create a servo object
 my_servo = Servo(
     pwm=servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
+)
+
+my_servo2= Servo(
+    pwm=servo_pwm2, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
 )
 
 time_last_change = utime.ticks_ms()
@@ -60,6 +65,11 @@ def smooth_change():
 
 while True:
     my_servo.set_duty(servo_value)
+    if servo_value != new_servo_value:
+        if not change_servo:
+            time_last_change = utime.ticks_ms()
+            change_servo = True
+    my_servo2.set_duty(servo_value)
     if servo_value != new_servo_value:
         if not change_servo:
             time_last_change = utime.ticks_ms()
