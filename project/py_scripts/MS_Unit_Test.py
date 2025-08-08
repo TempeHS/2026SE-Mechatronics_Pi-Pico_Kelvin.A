@@ -1,4 +1,4 @@
-from Movement import ServoMovement
+from servomovement import ServoMovement
 from time import sleep_ms
 
 movement = ServoMovement(
