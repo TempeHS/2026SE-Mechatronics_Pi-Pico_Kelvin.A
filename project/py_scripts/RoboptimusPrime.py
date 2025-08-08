@@ -1,10 +1,7 @@
 import time
 from machine import Pin, PWM
-from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from servo import Servo
-from PID_Controller import PIDControl
-from PiicoDev_Unified import sleep_ms
-from PiicoDev_SSD1306 import *
+
 
 L_servo_pwm = PWM(Pin(16))
 R_servo_pwm = PWM(Pin(15))
