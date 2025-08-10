@@ -7,6 +7,9 @@ class Ultrasonic:
     def __init__(self, threshold=500):
         self.__threshold = threshold
 
+    def values(self):
+        print(range_Front.distance_mm, range_Front.distance_mm)
+
     def stop(self):
         return range_Front.distance_mm <= self.__threshold
 
