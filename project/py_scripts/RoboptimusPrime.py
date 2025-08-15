@@ -17,15 +17,7 @@ range_Right = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
 while True:
     distance_A = range_Front.distance_mm
     distance_B = range_Right.distance_mm
-    print(distance_A, distance_B)
     movement.forward()
-    if distance_A < 100 and distance_B < 99:
-        movement.stop()
-        sleep_ms(1000)
-        movement.left()
-        sleep_ms(500)
-    elif distance_A < 100 and distance_B > 101:
-        movement.stop()
-        sleep_ms(1000)
-        movement.right()
-        sleep_ms(500)
+    print(distance_A, distance_B)
+    
+
