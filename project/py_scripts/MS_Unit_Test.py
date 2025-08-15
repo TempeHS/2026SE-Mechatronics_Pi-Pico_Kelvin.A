@@ -13,5 +13,8 @@ while True:
     sleep_ms(800)
     movement.stop()
     sleep_ms(600)
-    
+    movement.right()
+    sleep_ms(1000)
+    movement.forward()
+    break
 
