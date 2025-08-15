@@ -15,24 +15,19 @@ class ServoMovement:
     def forward(self):
         self.l_servo.set_duty(self.__forward[0])
         self.r_servo.set_duty(self.__forward[1])
-        sleep(2)
 
     def left(self):
         self.l_servo.set_duty(self.__left[0])
         self.r_servo.set_duty(self.__left[1])
-        sleep(2)
 
     def right(self):
         self.l_servo.set_duty(self.__right[0])
         self.r_servo.set_duty(self.__right[1])
-        sleep(2)
 
     def reverse(self):
         self.l_servo.set_duty(self.__reverse[0])
         self.r_servo.set_duty(self.__reverse[1])
-        sleep(2)
 
     def stop(self):
         self.l_servo.set_duty(self.__stop[0])
         self.r_servo.set_duty(self.__stop[1])
-        sleep(2)
