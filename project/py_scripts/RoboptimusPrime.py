@@ -20,9 +20,13 @@ while True:
     movement.forward()
     print(distance_A, distance_B)
     if distance_A <= 100 and distance_B <= 99:
-    movement.stop()
-    sleep_ms(1000)
-    movement.left()
-    elif
-    
+        movement.stop()
+        sleep_ms(600)
+        movement.left()
+        sleep_ms(600)
+    elif distance_A <= 100 and distance_B >= 101:
+        movement.stop()
+        sleep_ms(600)
+        movement.right()
+        sleep_ms(600)
 
