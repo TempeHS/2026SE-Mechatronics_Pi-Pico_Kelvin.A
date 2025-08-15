@@ -28,9 +28,12 @@
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "vscode-icons",
   "github.copilot.enable": {
-    "python": false,
-    "html": false,
-    "css": false
+    "css": false,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true,
+    "html": true,
+    "python": true
   },
   "chat.agent.enabled": false
 }

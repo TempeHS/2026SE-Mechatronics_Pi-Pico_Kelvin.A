@@ -1,6 +1,6 @@
 from machine import Pin, PWM
 from servo import Servo
-
+from time import sleep
 l_servo = Servo(PWM(Pin(16)), min_us=500, max_us=2500, dead_zone_us=1500, freq=50)
 r_servo = Servo(PWM(Pin(15)), min_us=500, max_us=2500, dead_zone_us=1500, freq=50)
 
@@ -15,15 +15,20 @@ class ServoMovement:
     def forward(self):
         l_servo.set_duty(self.__forward[0])
         r_servo.set_duty(self.__forward[1])
+        sleep(2)
     def left(self):
         l_servo.set_duty(self.__left[0])
         r_servo.set_duty(self.__left[1])
+        sleep(2)
     def right(self):
         l_servo.set_duty(self.__right[0])
         r_servo.set_duty(self.__right[1])
+        sleep(2)
     def reverse(self):
         l_servo.set_duty(self.__reverse[0])
         r_servo.set_duty(self.__reverse[1])
+        sleep(2)
     def stop(self):
         l_servo.set_duty(self.__stop[0])
         r_servo.set_duty(self.__stop[1])
+        sleep(2)
