@@ -1,4 +1,4 @@
-from servomovement import ServoMovement
+from lib.servomovement import ServoMovement
 from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from time import sleep_ms
 

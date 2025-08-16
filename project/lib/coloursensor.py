@@ -7,3 +7,4 @@ class ColourSensor:
         rgb = self.__coloursensor.readRGB()
         if self.__debug:
             print(rgb)
+        return rgb
