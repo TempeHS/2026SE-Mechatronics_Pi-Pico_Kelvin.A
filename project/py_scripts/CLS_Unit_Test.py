@@ -1,9 +1,12 @@
 from coloursensor import ColourSensor
+from PiicoDev_VEML6040 import PiicoDev_VEML6040
 
 
-colourSensor = PiicoDev_VEML6040()
+while True:
+    sensor = PiicoDev_VENL6040()
 
-colour = ColourSensor(colourSensor, debug=True)
-rgb = colour.sensecolour()
-print(f"RGB: {rgb}")
+    cs = ColourSensor(sensor, debug=True)
+
+    rgb = cs.sensecolour()
+    print(f'rgb: {rgb}')
 
