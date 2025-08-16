@@ -1,19 +1,17 @@
 from PiicoDev_VEML6040 import PiicoDev_VEML6040
 
 class ColourSensor:
-    def __init__(self):
-        self.__sensor = PiicoDev_VEML6040()
+    def __init__(self, coloursensor, debug=False):
+        self.__sensor = coloursensor
+        self.__debug = debug
 
-    def read_rgb(self):
-        return self.__sensor.read()
+    def sensecolour(self):
+        rgb = self.__sensor.readRGB()
+        if self.__debug:
+            print(f'RGB: {rgb}')
 
-    def colour(self):
-        r, g, b = self.read_rgb()
-        if r > g and r > b:
-            return "Red"
-        elif g > r and g > b:
-            return "Green"
-        elif b > r and b > g:
-            return "Blue"
-        else:
-            return "Idk"
+colourSensor = PiicoDev_VEML6040()
+
+colour = ColourSensor(colourSensor, debug=True)
+rgb = colour.sensecolour()
+print(f"RGB: {rgb}")
