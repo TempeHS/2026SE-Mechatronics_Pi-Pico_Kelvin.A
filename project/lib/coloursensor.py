@@ -4,7 +4,11 @@ class ColourSensor:
         self.__debug = debug
 
     def sensecolour(self):
-        rgb = self.__coloursensor.readRGB()
+        hsv = self.__coloursensor.readHSV()
+        red = hsv['red']
+        green = hsv['green']
+        blue = hsv['blue']
         if self.__debug:
-            print(rgb)
-        return rgb
+            print(red, green, blue)
+
+        return hsv
