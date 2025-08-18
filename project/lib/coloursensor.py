@@ -11,4 +11,4 @@ class ColourSensor:
         if self.__debug:
             print(red, green, blue)
 
-        return hsv
+        return red, green, blue

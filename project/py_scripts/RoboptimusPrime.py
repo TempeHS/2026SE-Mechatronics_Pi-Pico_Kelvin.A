@@ -24,17 +24,27 @@ while True:
     distance_A = range_Front.distance_mm
     distance_B = range_Right.distance_mm
     print(distance_A, distance_B)
-    cs.sensecolour()
+    r, g, b = cs.sensecolour()
+
+    if g > r and g > b:
+        print("GREEEN")
+        movement.stop()
+        sleep_ms(1000)
+        continue
     
-    if distance_A <= 100 and distance_B <= 99:
+    if distance_A <= 100 and distance_B <= 100:
         movement.stop()
         sleep_ms(600)
         movement.left()
         sleep_ms(475)
+
     elif distance_A <= 100 and distance_B >= 101:
         movement.stop()
         sleep_ms(600)
         movement.right()
         sleep_ms(475)
+
     else:
         movement.forward()
+
+    sleep_ms(150)
