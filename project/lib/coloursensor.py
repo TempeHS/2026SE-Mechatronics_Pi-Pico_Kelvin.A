@@ -1,3 +1,5 @@
+from PiicoDev_VEML6040 import PiicoDev_VEML6040
+
 class ColourSensor:
     def __init__(self, coloursensor, debug=False):
         self.__coloursensor = coloursensor
@@ -5,10 +7,6 @@ class ColourSensor:
 
     def sensecolour(self):
         hsv = self.__coloursensor.readHSV()
-        red = hsv['red']
-        green = hsv['green']
-        blue = hsv['blue']
         if self.__debug:
-            print(red, green, blue)
+            print(hsv)
 
-        return red, green, blue
