@@ -9,4 +9,5 @@ class ColourSensor:
         hsv = self.__coloursensor.readHSV()
         if self.__debug:
             print(hsv)
+        return hsv
 

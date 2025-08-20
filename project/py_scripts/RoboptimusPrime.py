@@ -1,8 +1,9 @@
-from servomovement import ServoMovement
-from coloursensor import ColourSensor
+from lib.servomovement import ServoMovement
+from lib.coloursensor import ColourSensor
 from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from PiicoDev_VEML6040 import PiicoDev_VEML6040
-from time import sleep_ms, sleep
+from PiicoDev_SSD1306 import *
+from time import sleep_ms
 
 
 movement = ServoMovement(
@@ -12,6 +13,8 @@ movement = ServoMovement(
     reverse=(500, 2500),
     stop=(1500, 1500)
 )
+
+display = create_PiicoDev_SSD1306()
 
 range_Front = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
 range_Right = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
@@ -24,7 +27,14 @@ while True:
     distance_A = range_Front.distance_mm
     distance_B = range_Right.distance_mm
     print(distance_A, distance_B)
-    cs.sensecolour()
+    
+    hsv = cs.sensecolour()
+    hue = hsv['hue']
+    
+    if hue > 90:
+        movement.stop()
+        sleep_ms(2000)
+        continue
 
     if distance_A <= 100 and distance_B <= 100:
         movement.stop()
