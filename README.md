@@ -1,10 +1,10 @@
-# Project Title
+# Roboptimus Prime
 
-Simple overview of use/purpose.
+
+Roboptimus prime is a robot which is able to complete a maze, utilising a set of ultrasonic sensors, colour sensors, servos, and a oled screen. It's purpose is to be able to safely navigate a maze without crashing, and also to stop, wait a few seconds and continue its loop, when the colour green has been detected.
 
 ## Description
-
-An in-depth paragraph about your project and overview of use.
+Roboptimus prime utilises Micropython to run, with python being the programming language
 
 ## Getting Started
 
