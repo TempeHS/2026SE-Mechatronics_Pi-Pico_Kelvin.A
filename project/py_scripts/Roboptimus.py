@@ -18,7 +18,10 @@ class Roboptimus:
             reverse=( 500, 2500),
             stop=(1500, 1500),
         )
-        self.__display = create_PiicoDev_SSD1306()
+        self.__display = create_PiicoDev_SSD1306() ##Shows 'Green' when green has been detected
+                                                    #if hue > 90:
+                                                    # self.__display.fill(0)
+                                                    # self.__display.text("Green Detected", 0, 20, 0)
         self.__range_Front = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
         self.__range_Right = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
         self.__sensor = PiicoDev_VEML6040()
@@ -33,33 +36,33 @@ class Roboptimus:
     
     def navigate(self, Front_us, Right_us, hue):
         if hue > 90:
-            self.movement.stop()
+            self.__movement.stop()
             sleep_ms(2000)
             return
 
         if Front_us <= 100 and Right_us < 100:
-            self.movement.stop()
+            self.__movement.stop()
             sleep_ms(600)
-            self.movement.left()
+            self.__movement.left()
             sleep_ms(475)
 
         elif Front_us <= 100 and Right_us > 101:
-            self.movement.stop()
+            self.__movement.stop()
             sleep_ms(600)
-            self.movement.right()
+            self.__movement.right()
             sleep_ms(475)
 
         else:
-            self.movement.forward()
+            self.__movement.forward()
 
     def run(self):
         while True:
-            Front_us, Right_us, hue = self._read_sensors()
-            print(f"Front: {Front_us} mm, Right: {Right_us} mm, Hue: {hue}")
-            self._navigate(Front_us, Right_us, hue)
+            Front_us, Right_us, hue = self.read_sensor()
+            print(f"Front: {Front_us}, Right: {Right_us}, Hue: {hue}")
+            self.navigate(Front_us, Right_us, hue)
 
 
-if __name__ == "__main__":
+while True:
     roboptimus = Roboptimus()
     roboptimus.run()
 
