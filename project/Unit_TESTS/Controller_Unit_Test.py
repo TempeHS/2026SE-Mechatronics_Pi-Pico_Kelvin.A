@@ -2,7 +2,7 @@ from lib.servomovement import ServoMovement
 from lib.coloursensor import ColourSensor
 from PiicoDev_Ultrasonic import PiicoDev_Ultrasonic
 from PiicoDev_VEML6040 import PiicoDev_VEML6040
-from PiicoDev_SSD1306 import *
+# from PiicoDev_SSD1306 import *
 from time import sleep_ms
 
 
@@ -14,7 +14,8 @@ movement = ServoMovement(
     stop=(1500, 1500)
 )
 
-display = create_PiicoDev_SSD1306()
+# display = create_PiicoDev_SSD1306()
+
 
 range_Front = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
 range_Right = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])

@@ -7,3 +7,5 @@ from time import sleep
 
 while True:
     1.values()
+    print('Distance values should show in Terminal^')
+    break

@@ -9,12 +9,16 @@ movement = ServoMovement(
     stop=(1500, 1500)
 )
 while True:
+    print('Robot should turn left')
     movement.left()
     sleep_ms(800)
+    print('Robot should stop moving')
     movement.stop()
     sleep_ms(600)
+    print('Robot should turn right')
     movement.right()
     sleep_ms(1000)
+    print('Robot should move forward')
     movement.forward()
     break
 

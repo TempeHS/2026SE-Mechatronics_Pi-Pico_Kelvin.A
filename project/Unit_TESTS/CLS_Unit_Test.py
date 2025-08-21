@@ -6,5 +6,7 @@ sensor = PiicoDev_VEML6040()
 cs = ColourSensor(sensor, debug=True)
 
 while True:
-    rgb = cs.sensecolour()
-    print(f'rgb: {rgb}')
+    hsv = cs.sensecolour()
+    print(f'rgb: {hsv}')
+    print('Hue value should show in Terminal')
+
