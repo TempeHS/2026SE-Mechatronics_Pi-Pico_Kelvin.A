@@ -14,7 +14,10 @@ movement = ServoMovement(
     stop=(1500, 1500)
 )
 
+<<<<<<< Updated upstream:project/Unit_TESTS/Controller_Unit_Test.py
 # display = create_PiicoDev_SSD1306()
+=======
+>>>>>>> Stashed changes:project/py_scripts/RoboptimusPrime.py
 
 
 range_Front = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])
@@ -23,18 +26,18 @@ range_Right = PiicoDev_Ultrasonic(id=[0, 0, 0, 0])
 sensor = PiicoDev_VEML6040()
 cs = ColourSensor(sensor, debug=True)
 
-
 while True:
+    hsv = cs.sensecolour()
+    hue = hsv['hue']
     distance_A = range_Front.distance_mm
     distance_B = range_Right.distance_mm
     print(distance_A, distance_B)
     
-    hsv = cs.sensecolour()
-    hue = hsv['hue']
-    
     if hue > 90:
         movement.stop()
-        sleep_ms(2000)
+        sleep_ms(500)
+        movement.forward()
+        sleep_ms(400)
         continue
 
     if distance_A <= 100 and distance_B <= 100:
@@ -42,6 +45,7 @@ while True:
         sleep_ms(600)
         movement.left()
         sleep_ms(475)
+        
 
     elif distance_A <= 100 and distance_B >= 101:
         movement.stop()
@@ -51,3 +55,5 @@ while True:
 
     else:
         movement.forward()
+    
+    

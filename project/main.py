@@ -19,6 +19,7 @@ def callback(stop_pin):
 
 
 # Add an interrupt to the stop pin
+
 stop_pin.irq(trigger=Pin.IRQ_FALLING, handler=callback)
 
 # Import the v01.py script and setup exception handling
