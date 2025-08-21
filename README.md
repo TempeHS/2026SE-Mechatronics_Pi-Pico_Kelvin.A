@@ -4,14 +4,17 @@
 Roboptimus prime is a robot which is able to complete a maze, utilising a set of ultrasonic sensors, colour sensors, servos, and a oled screen. It's purpose is to be able to safely navigate a maze without crashing, and also to stop, wait a few seconds and continue its loop, when the colour green has been detected.
 
 ## Description
-Roboptimus prime utilises Micropython to run, with python being the programming language
+Roboptimus prime is a microcontroller-based robot utilising Raspberry Pi Pico. It is equipped with **Ultrasonic Sensors** to detect distance from the front and side, **Servo motors** for directional movement, a **Colour sensor** to detect the colour green, and an **OLED display** for visual feedback. The overall use of the robot is for autonomous navigation environments, like a maze-solving competition.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Raspberry Pi Pico with MicroPython
+* Host machine
+* PiicoDev Python Libraries
+* Servo-Control Library for PWM actuation
+* USB-A to Micro-USB cable
 
 ### Installing
 
