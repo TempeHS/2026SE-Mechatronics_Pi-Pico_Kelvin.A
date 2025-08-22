@@ -14,10 +14,7 @@ movement = ServoMovement(
     stop=(1500, 1500)
 )
 
-<<<<<<< Updated upstream:project/Unit_TESTS/Controller_Unit_Test.py
 # display = create_PiicoDev_SSD1306()
-=======
->>>>>>> Stashed changes:project/py_scripts/RoboptimusPrime.py
 
 
 range_Front = PiicoDev_Ultrasonic(id=[1, 0, 0, 0])

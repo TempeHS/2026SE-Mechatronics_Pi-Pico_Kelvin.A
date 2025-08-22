@@ -1,9 +1,9 @@
-from lib.colorsensor import ColourSensor
+from lib.colourscreen import ColourScreen
 from PiicoDev_VEML6040 import PiicoDev_VEML6040
 
 
 sensor = PiicoDev_VEML6040()
-cs = ColourSensor(sensor, debug=True)
+cs = ColourScreen(sensor, debug=True)
 
 while True:
     hsv = cs.sensecolour()
