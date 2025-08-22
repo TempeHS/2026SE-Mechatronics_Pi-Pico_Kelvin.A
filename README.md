@@ -18,42 +18,69 @@ Roboptimus prime is a microcontroller-based robot utilising Raspberry Pi Pico. I
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Export Files onto System
+* Open in VS Code
+* Upload project to Pi Pico
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+* Ensure MicroPython Board connection is established
+* Right click on a file and press run current file on Pico to run a file
+* Right click on a file and press upload project to Pico in order to upload files onto Pico
+* if there is a specific file you want to test change main.py line 7 into the name of code you want executed on Pico.
+* Magic
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* Ensure the correct **drives** are installed.
+* Ensure MicroPython board is **connected**
+* Ensure there is power throughout your system
+* Ensure wires are **not** broken/disconnected
+* Ensure sensors **are** working
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Mr Jones
-ex. [@benpaddlejones](https://github.com/benpaddlejones)
+kelvin Aung
+[@kelvin.aung@education.nsw.gov.au](https://github.com/TheFileExplorer)
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]() or see [branch]()
 * 0.1
-    * Initial Release
+    * movement class created & unit tests added
+    * Distance reading function implemented
+    * mered updates from main branch
+    * Start UltrasonicSensor class
+    * update ultrasonic.py
+* 0.2
+    * Add UltraSonic method
+    * Minor fixes
+    * Cleanup code
+* 0.3
+    * introduce MS_Unit_TEST and CLS_Unit_Test
+* 0.4
+    * Add colour sensor class & unit tests
+    * update CLS module
+    * Fixed bugs in ColourSensor class
+* 0.5
+    * Change colour sensor to return HSV instead of RGB
+    * Update roboptimus print logic
+    * Fixed colour sensor bugs
+* 0.6
+    * Start display code
+    * Ultrasonic class placeholder
+* 0.7
+    * Draft controller for Roboptimus
+    * Updates
+    * Update README.md
+    * last-minute corrections
+    * **Final Commit**
+* 0.8
+    * UPDATE README
+     
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [GPL-3.0] License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
